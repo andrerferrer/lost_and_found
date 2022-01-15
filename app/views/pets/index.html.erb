@@ -1,0 +1,18 @@
+<h1>Lost and Found Pets (made with Love)</h1>
+
+<ul>
+  <% @pets.each do |pet| %>
+    <li>
+      <%# link_to pet.name, pet | pet.species  | <%= pet.found_on %>
+      <%# link_to pet.name, pet_path(pet) | pet.species  | <%= pet.found_on %>
+      <%= link_to pet.name, pet_path(pet.id) %> | <%= pet.species %> | <%= pet.found_on %> | 
+      <%= link_to "❌", pet_path(pet), method: :DELETE, data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>
+
+<p>
+
+  <%= link_to 'Report a pet as found', new_pet_path %>
+
+</p>

@@ -1,0 +1,14 @@
+<h2>Report a Pet as Found!</h2>
+
+<%= form_for @pet do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :photo_url %>
+  <%= form.text_field :photo_url %>
+  <%= form.label :species %>
+  <%# HOMEWORK: how to refactor the array below %>
+  <%= form.select :species, [ 'Dog', 'Cat', 'Fish', 'Bird', 'Lizard' ] %>
+  <%= form.label :found_on %>
+  <%= form.date_field :found_on %>
+  <%= form.submit %>
+<% end %>
